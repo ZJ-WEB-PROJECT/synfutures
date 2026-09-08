@@ -1,0 +1,247 @@
+:root {
+  --color-base: #000;
+  --color-surface: #0b1a1d;
+  --color-input: #010b0e;
+  --color-brand: #53e6d4;
+  --color-brand-soft: #bcf0ea;
+  --color-accent: #f1f434;
+  --color-text-white: #fff;
+  --color-text-body: #abb5ba;
+  --color-text-muted: #446e6e;
+  --color-line: #1e3436;
+  --font-sans: 'DM Sans', system-ui, sans-serif;
+  --font-display: 'Hubot Sans', 'DM Sans', sans-serif;
+  --max: 1440px;
+}
+
+@font-face {
+  font-family: 'Hubot Sans';
+  font-style: normal;
+  font-display: swap;
+  font-weight: 200 900;
+  src: url('/assets/hubot-sans-latin-wght-normal-4x4LLvEw.woff2') format('woff2-variations');
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+html,
+body {
+  min-height: 100%;
+  background: var(--color-base);
+  color: var(--color-text-body);
+  font-family: var(--font-sans);
+  -webkit-font-smoothing: antialiased;
+  overflow-x: hidden;
+}
+
+img,
+svg {
+  display: block;
+  max-width: 100%;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+button,
+input {
+  font: inherit;
+  color: inherit;
+}
+
+button {
+  cursor: pointer;
+  background: none;
+  border: 0;
+}
+
+ul {
+  list-style: none;
+}
+
+.app-shell {
+  min-height: 100vh;
+  background: var(--color-base);
+}
+
+main {
+  padding-top: 72px;
+}
+
+@media (min-width: 640px) {
+  main {
+    padding-top: 84px;
+  }
+}
+
+.wrap {
+  width: 100%;
+  max-width: var(--max);
+  margin: 0 auto;
+  padding: 0 20px;
+}
+
+@media (min-width: 640px) {
+  .wrap {
+    padding: 0 32px;
+  }
+}
+
+@media (min-width: 1024px) {
+  .wrap {
+    padding: 0 80px;
+  }
+}
+
+.display {
+  font-family: var(--font-display);
+  font-variation-settings: 'wdth' 75;
+  letter-spacing: 0;
+}
+
+.btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  border-radius: 999px;
+  padding: 8px 20px;
+  font-size: 16px;
+  line-height: 1.5;
+  white-space: nowrap;
+  transition: color 0.2s, background-color 0.2s, border-color 0.2s;
+}
+
+.btn-brand {
+  background: var(--color-brand);
+  color: #000;
+  font-weight: 600;
+}
+
+.btn-brand:hover {
+  background: var(--color-brand-soft);
+}
+
+.btn-outline {
+  border: 1.5px solid var(--color-brand);
+  color: #fff;
+  font-weight: 600;
+  background: transparent;
+}
+
+.btn-outline:hover {
+  background: var(--color-brand);
+  color: #000;
+}
+
+.pill {
+  display: inline-flex;
+  align-items: center;
+  height: 31px;
+  border-radius: 999px;
+  padding: 0 11px;
+  font-size: 14px;
+}
+
+.hero-title {
+  animation: heroTitleFadeIn 1s cubic-bezier(0.165, 0.84, 0.44, 1) 0.1s forwards;
+  opacity: 0;
+}
+
+@keyframes heroTitleFadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(-16px);
+  }
+}
+
+.hero-stat-card,
+.how-step-card,
+.join-cta-card,
+.stat-card {
+  position: relative;
+}
+
+.hero-stat-card::before,
+.how-step-card::before,
+.join-cta-card::before,
+.stat-card::before {
+  content: '';
+  position: absolute;
+  inset: -1px;
+  z-index: 0;
+  border-radius: inherit;
+  pointer-events: none;
+  padding: 1px;
+  background: conic-gradient(from var(--spin, 0deg), #0ff0 0%, #0ff0 90%, #32ea9f80 95%, #53e6d4 100%);
+  -webkit-mask: linear-gradient(#000 0 0) content-box, linear-gradient(#000 0 0);
+  -webkit-mask-composite: xor;
+  mask-composite: exclude;
+  animation: spin 6s linear infinite;
+}
+
+.hero-stat-card > *,
+.how-step-card > *,
+.join-cta-card > *,
+.stat-card > * {
+  position: relative;
+  z-index: 1;
+}
+
+@keyframes spin {
+  to {
+    --spin: 360deg;
+  }
+}
+
+@property --spin {
+  syntax: '<angle>';
+  inherits: false;
+  initial-value: 0deg;
+}
+
+.marquee-left {
+  animation: marquee-left 18s linear infinite;
+}
+
+.marquee-right {
+  animation: marquee-right 18s linear infinite;
+}
+
+.partner-marquee {
+  animation: marquee-right 30s linear infinite;
+}
+
+@keyframes marquee-left {
+  from {
+    transform: translateX(0);
+  }
+  to {
+    transform: translateX(-50%);
+  }
+}
+
+@keyframes marquee-right {
+  from {
+    transform: translateX(-50%);
+  }
+  to {
+    transform: translateX(0);
+  }
+}
