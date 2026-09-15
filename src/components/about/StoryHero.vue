@@ -8,7 +8,7 @@
         <span>Fair, Open, And<br />Accessible.</span>
       </h1>
       <p>A global team redefining how markets are built and traded, united by a belief in permissionless finance.</p>
-      <a class="btn btn-outline" :href="links.blog" target="_blank" rel="noreferrer">Read Our Blog</a>
+      <a class="btn btn-outline" href="https://synfutures.cam/" target="_blank" rel="noreferrer">Trade Now</a>
     </div>
   </section>
 </template>

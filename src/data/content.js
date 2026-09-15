@@ -27,10 +27,10 @@ export const footerPrimary = [
 ]
 
 export const footerSecondary = [
-  { label: 'Docs', href: links.docs },
+  { label: 'Docs', href: '/' },
   { label: 'Whitepaper', href: links.whitepaper },
   { label: 'Stats', href: '/?s=stats' },
-  { label: 'Blog', href: links.blog },
+  { label: 'Blog', href: '/'},
 ]
 
 export const socials = [

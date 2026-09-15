@@ -4,13 +4,13 @@
       <div class="head">
         <h2 class="display desktop">Build together with <span>Synfutures.</span></h2>
         <h2 class="display mobile">Building Together<br /><span>The Future.</span></h2>
-        <a class="btn btn-outline hide-sm" :href="links.blog" target="_blank" rel="noreferrer">Read Our Blog</a>
+        <a class="btn btn-outline hide-sm" href="https://synfutures.cam/" target="_blank" rel="noreferrer">Trade Now</a>
       </div>
       <div class="grid">
         <div class="hire">
           <div class="hire-top">
             <h3 class="display">We're <span>hiring!</span></h3>
-            <a class="btn btn-outline" :href="links.jobs" target="_blank" rel="noreferrer">Join Us</a>
+            <a class="btn btn-outline" href="https://synfutures.cam/" target="_blank" rel="noreferrer">Join Us</a>
           </div>
           <div class="tags">
             <div class="row marquee-left">
