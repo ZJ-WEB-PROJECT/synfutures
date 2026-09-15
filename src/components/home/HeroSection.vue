@@ -15,8 +15,8 @@
         <br class="br" />stocks, ETFs, and derivatives onchain
       </p>
       <div class="actions">
-        <a class="btn btn-brand" :href="links.trade" target="_blank" rel="noreferrer">Trade Now</a>
-        <a class="btn btn-outline" :href="links.docs" target="_blank" rel="noreferrer">Learn More</a>
+        <a class="btn btn-brand" :href="links.trade" rel="noreferrer">Trade Now</a>
+        <a class="btn btn-outline" :href="links.docs" rel="noreferrer">Learn More</a>
       </div>
     </div>
 
@@ -52,7 +52,9 @@
     </div>
 
     <div class="mobile-stats">
-      <div class="candles mini"><KlineChart /></div>
+      <div class="candles mini">
+        <KlineChart />
+      </div>
       <div class="grid">
         <div class="card hero-stat-card">
           <svg viewBox="0 0 34 34" class="icon-duo">
@@ -65,7 +67,8 @@
         <div class="card hero-stat-card">
           <svg class="icon-yellow" width="48" height="48" viewBox="0 0 48 48" fill="none">
             <circle cx="24" cy="15" r="9" stroke="currentColor" stroke-width="3.2" />
-            <path d="M8 42c2-9 7.2-14 16-14s14 5 16 14" stroke="currentColor" stroke-width="3.2" stroke-linecap="round" />
+            <path d="M8 42c2-9 7.2-14 16-14s14 5 16 14" stroke="currentColor" stroke-width="3.2"
+              stroke-linecap="round" />
           </svg>
           <div class="num display">433.2K</div>
           <div class="label">All-time Traders</div>
@@ -346,6 +349,7 @@ h1 span {
   .candles {
     display: block;
   }
+
   .desktop-only {
     display: flex;
     flex-direction: column;

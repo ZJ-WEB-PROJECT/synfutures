@@ -5,9 +5,9 @@
         <div class="brand-col">
           <img src="/assets/new_logo.svg" alt="SynFutures" class="logo" />
           <p class="tagline display">Simple, powerful, permissionless trading.</p>
-          <a class="btn btn-brand launch" :href="links.trade" target="_blank" rel="noreferrer">Launch App</a>
+          <a class="btn btn-brand launch" :href="links.trade" rel="noreferrer">Launch App</a>
           <div class="socials">
-            <a v-for="item in socials" :key="item.label" :href="item.href" target="_blank" rel="noreferrer" :aria-label="item.label">
+            <a v-for="item in socials" :key="item.label" :href="item.href" rel="noreferrer" :aria-label="item.label">
               <SocialIcon :name="item.label" />
             </a>
           </div>
@@ -15,7 +15,8 @@
             <p>Join our newsletter</p>
             <div class="row">
               <div class="field">
-                <input v-model="email" type="email" required placeholder="Enter your email" aria-label="Email address" />
+                <input v-model="email" type="email" required placeholder="Enter your email"
+                  aria-label="Email address" />
               </div>
               <button class="btn btn-brand" type="submit">{{ sending ? 'Sending...' : 'Subscribe' }}</button>
             </div>
@@ -30,7 +31,8 @@
           </ul>
           <ul>
             <li v-for="item in footerSecondary" :key="item.label">
-              <a v-if="isExternal(item.href) || item.href.endsWith('.pdf')" :href="item.href" :target="item.href.startsWith('http') ? '_blank' : undefined" rel="noreferrer">{{ item.label }}</a>
+              <a v-if="isExternal(item.href) || item.href.endsWith('.pdf')" :href="item.href"
+                :target="item.href.startsWith('http') ? '_blank' : undefined" rel="noreferrer">{{ item.label }}</a>
               <RouterLink v-else :to="item.href">{{ item.label }}</RouterLink>
             </li>
           </ul>
@@ -175,9 +177,11 @@ function subscribe() {
   .logo {
     height: 28px;
   }
+
   .tagline {
     font-size: 40px;
   }
+
   .copy {
     margin-top: 240px;
     font-size: 14px;
