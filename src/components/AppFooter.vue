@@ -5,7 +5,7 @@
         <div class="brand-col">
           <img src="/assets/Cervanta-logo.png" alt="Cervanta" class="logo" />
           <p class="tagline display">Simple, powerful, permissionless trading.</p>
-          <a class="btn btn-brand launch" :href="links.trade" target="_blank" rel="noreferrer">Launch App</a>
+          <a class="btn btn-brand launch" v-bind="tradeLinkAttrs">Launch App</a>
           <!-- <div class="socials">
             <a v-for="item in socials" :key="item.label" :href="item.href" target="_blank" rel="noreferrer" :aria-label="item.label">
               <SocialIcon :name="item.label" />
@@ -45,8 +45,11 @@
 
 <script setup>
 import { ref } from 'vue'
-import { footerPrimary, footerSecondary, links, socials } from '@/data/content'
+import { footerPrimary, footerSecondary, socials } from '@/data/content'
 import SocialIcon from '@/components/SocialIcon.vue'
+import { getTradeLinkAttrs } from '@/utils/tradeUrl'
+
+const tradeLinkAttrs = getTradeLinkAttrs()
 
 const email = ref('')
 const sending = ref(false)

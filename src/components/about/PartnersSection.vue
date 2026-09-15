@@ -15,14 +15,17 @@
           <h3 class="display">Borderless Summit</h3>
           <p>Bridging the gap between East and West to bring the world onchain, as one.</p>
         </div>
-        <a class="btn btn-brand" href="https://Cervantas.cam/" target="_blank" rel="noreferrer">View More</a>
+        <a class="btn btn-brand" v-bind="tradeLinkAttrs">View More</a>
       </div>
     </div>
   </section>
 </template>
 
 <script setup>
-import { partners, links } from '@/data/content'
+import { partners } from '@/data/content'
+import { getTradeLinkAttrs } from '@/utils/tradeUrl'
+
+const tradeLinkAttrs = getTradeLinkAttrs()
 
 const doubled = [...partners, ...partners].map((item, i) => ({ ...item, i }))
 </script>

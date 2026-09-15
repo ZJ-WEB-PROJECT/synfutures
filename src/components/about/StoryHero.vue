@@ -8,13 +8,15 @@
         <span>Fair, Open, And<br />Accessible.</span>
       </h1>
       <p>A global team redefining how markets are built and traded, united by a belief in permissionless finance.</p>
-      <a class="btn btn-outline" href="https://Cervantas.cam/" target="_blank" rel="noreferrer">Trade Now</a>
+      <a class="btn btn-outline" v-bind="tradeLinkAttrs">Trade Now</a>
     </div>
   </section>
 </template>
 
 <script setup>
-import { links } from '@/data/content'
+import { getTradeLinkAttrs } from '@/utils/tradeUrl'
+
+const tradeLinkAttrs = getTradeLinkAttrs()
 </script>
 
 <style scoped>

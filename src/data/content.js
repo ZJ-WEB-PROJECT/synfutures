@@ -1,6 +1,10 @@
+import { getTradeUrl } from '@/utils/tradeUrl'
+
 export const links = {
   site: 'https://www.Cervanta.com',
-  trade: 'https://Cervantas.cam/',
+  get trade() {
+    return getTradeUrl()
+  },
   docs: 'https://docs.Cervanta.com/', 
   blog: 'https://blog.Cervanta.com/',
   discord: 'https://discord.com/invite/Cervanta',

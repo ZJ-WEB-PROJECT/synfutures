@@ -13,11 +13,11 @@
               <RouterLink v-else :to="item.href" :class="{ active: isActive(item.href) }">{{ item.label }}</RouterLink>
             </li>
           </ul>
-          <a class="btn btn-brand trade" :href="links.trade" target="_blank" rel="noreferrer">Trade Now</a>
+          <a class="btn btn-brand trade" v-bind="tradeLinkAttrs">Trade Now</a>
         </div>
 
         <div class="mobile-actions">
-          <a class="btn btn-brand trade-sm" :href="links.trade" target="_blank" rel="noreferrer">Trade Now</a>
+          <a class="btn btn-brand trade-sm" v-bind="tradeLinkAttrs">Trade Now</a>
           <button type="button" aria-label="Toggle menu" @click="open = !open">
             <img src="/assets/icon_list.svg" alt="" />
           </button>
@@ -39,7 +39,10 @@
 <script setup>
 import { ref } from 'vue'
 import { useRoute } from 'vue-router'
-import { links, nav } from '@/data/content'
+import { nav } from '@/data/content'
+import { getTradeLinkAttrs } from '@/utils/tradeUrl'
+
+const tradeLinkAttrs = getTradeLinkAttrs()
 
 const route = useRoute()
 const open = ref(false)

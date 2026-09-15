@@ -15,7 +15,7 @@
         <br class="br" />stocks, ETFs, and derivatives onchain
       </p>
       <div class="actions">
-        <a class="btn btn-brand" :href="links.trade" target="_blank" rel="noreferrer">Trade Now</a>
+        <a class="btn btn-brand" v-bind="tradeLinkAttrs">Trade Now</a>
         <a class="btn btn-outline" :href="links.docs" target="_blank" rel="noreferrer">Learn More</a>
       </div>
     </div>
@@ -86,6 +86,9 @@
 <script setup>
 import { links } from '@/data/content'
 import KlineChart from '@/components/home/KlineChart.vue'
+import { getTradeLinkAttrs } from '@/utils/tradeUrl'
+
+const tradeLinkAttrs = getTradeLinkAttrs()
 </script>
 
 <style scoped>
