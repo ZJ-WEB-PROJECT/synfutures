@@ -9,8 +9,8 @@
       </div>
       <div class="shot">
         <img
-          src="/assets/rwa_info.png"
-          srcset="/assets/rwa_info_p_500.png 500w, /assets/rwa_info_p_800.png 800w, /assets/rwa_info_p_1080.png 1080w, /assets/rwa_info.png 1542w"
+          src="/assets/rwa_info.png?v=2"
+          srcset="/assets/rwa_info_p_500.png?v=2 500w, /assets/rwa_info_p_800.png?v=2 800w, /assets/rwa_info_p_1080.png?v=2 1080w, /assets/rwa_info.png?v=2 1542w"
           sizes="(max-width: 639px) 373px, (max-width: 1023px) 760px, 1028px"
           alt="Cervanta trading terminal"
         />
