@@ -12,7 +12,7 @@
           <article class="how-step-card">
             <span class="pill">{{ item.step }}</span>
             <h3 class="display">{{ item.title }}</h3>
-            <p>{{ item.body }}</p>
+            <p>{{ item.body }}</p> 
           </article>
           <img :src="item.image" :alt="`${item.title} interface`" />
         </div>
@@ -21,8 +21,10 @@
       <div class="desktop">
         <div class="col" ref="list">
           <div v-for="(item, i) in steps" :key="item.step" class="sticky">
-            <!-- <article class="how-step-card" :style="{ opacity: active === -1 || i <= active ? 1 : 0.3 }"> -->
-            <article class="how-step-card">
+            <article
+              class="how-step-card"
+              :style="{ opacity: active === -1 || i <= active ? 1 : 0.3 }"
+            >
               <span class="pill">{{ item.step }}</span>
               <h3 class="display">{{ item.title }}</h3>
               <p>{{ item.body }}</p>
@@ -47,29 +49,62 @@
 import { onMounted, onUnmounted, ref } from 'vue'
 import { steps } from '@/data/content'
 
+const STICKY_OFFSET = 140
 const list = ref(null)
-const active = ref(0)
+const active = ref(-1)
 
-function onScroll() {
+let ticking = false
+let scrollTargets = []
+
+function scrollParents() {
+  const nodes = [window, document, document.documentElement, document.body]
+  let node = list.value?.parentElement
+  while (node && node !== document.body) {
+    const style = window.getComputedStyle(node)
+    if (/(auto|scroll|overlay)/.test(`${style.overflow}${style.overflowY}`)) {
+      nodes.push(node)
+    }
+    node = node.parentElement
+  }
+  return [...new Set(nodes)]
+}
+
+function updateActive() {
   if (!window.matchMedia('(min-width: 1024px)').matches || !list.value) {
     active.value = -1
     return
   }
-  const children = list.value.children
+  const children = [...list.value.children]
   let index = 0
   for (let i = 0; i < children.length; i++) {
-    if (children[i].getBoundingClientRect().top <= 130) index = i
+    if (children[i].getBoundingClientRect().top <= STICKY_OFFSET) index = i
   }
   active.value = index
 }
 
+function onScroll() {
+  if (ticking) return
+  ticking = true
+  requestAnimationFrame(() => {
+    ticking = false
+    updateActive()
+  })
+}
+
 onMounted(() => {
-  onScroll()
-  window.addEventListener('scroll', onScroll, { passive: true })
+  updateActive()
+  scrollTargets = scrollParents()
+  scrollTargets.forEach((el) => {
+    el.addEventListener('scroll', onScroll, { passive: true })
+  })
+  window.addEventListener('resize', onScroll, { passive: true })
 })
 
 onUnmounted(() => {
-  window.removeEventListener('scroll', onScroll)
+  scrollTargets.forEach((el) => {
+    el.removeEventListener('scroll', onScroll)
+  })
+  window.removeEventListener('resize', onScroll)
 })
 </script>
 
@@ -124,6 +159,7 @@ h2 span {
   border-radius: 16px;
   background: #000;
   padding: 32px 24px;
+  transition: opacity 0.4s ease;
 }
 
 h3 {
@@ -179,16 +215,12 @@ article p {
   }
   .preview {
     position: sticky;
-    top: 120px;
-    height: 0;
   }
   .preview img {
-    position: absolute;
-    top: 0;
-    left: 0;
     width: 100%;
     max-width: 500px;
-    transition: opacity 0.4s;
+    pointer-events: none;
+    transition: opacity 0.4s ease;
   }
 }
 </style>

@@ -34,7 +34,7 @@
     </div>
 
     <div class="card mid hero-stat-card desktop-only">
-      <img src="/assets/cumulative_trading_volume.svg" alt="" />
+      <img src="/assets/cumulative_trading_volume.png" alt="" />
       <div class="mid-row">
         <div class="big display">$329.9B</div>
         <div class="chip"><span /><em>Trade</em></div>
@@ -72,7 +72,7 @@
         </div>
       </div>
       <div class="card mid hero-stat-card">
-        <img src="/assets/cumulative_trading_volume.svg" alt="" />
+        <img src="/assets/cumulative_trading_volume.png" alt="" />
         <div class="mid-row">
           <div class="big display">$329.9B</div>
           <div class="chip"><span /><em>Trade</em></div>

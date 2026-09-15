@@ -1,5 +1,6 @@
 <template>
   <section class="story">
+    <video class="video" src="/assets/blog_video.mp4" autoplay muted loop></video>
     <div class="wrap">
       <span class="pill">Our Story</span>
       <h1 class="display">
@@ -26,6 +27,20 @@ import { links } from '@/data/content'
     radial-gradient(ellipse 60% 50% at 80% 20%, rgba(83, 230, 212, 0.12), transparent),
     #000;
   padding-top: 144px;
+}
+
+.wrap{
+  z-index: 999;
+  position: relative;
+}
+
+.video {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
 }
 
 .pill {
