@@ -16,7 +16,7 @@ export const links = {
 export const nav = [
   { label: 'About', href: '/about-us' },
   { label: 'Stats', href: '/?s=stats' },
-  { label: 'Docs', href: links.docs },
+  { label: 'Docs', href: '/' },
 ]
 
 export const footerPrimary = [
