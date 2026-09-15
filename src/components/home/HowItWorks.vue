@@ -49,7 +49,7 @@
 import { onMounted, onUnmounted, ref } from 'vue'
 import { steps } from '@/data/content'
 
-const STICKY_OFFSET = 140
+const STICKY_OFFSET = 360
 const list = ref(null)
 const active = ref(-1)
 
@@ -75,9 +75,10 @@ function updateActive() {
     return
   }
   const children = [...list.value.children]
+  const trigger = Math.max(STICKY_OFFSET, Math.round(window.innerHeight * 0.55))
   let index = 0
   for (let i = 0; i < children.length; i++) {
-    if (children[i].getBoundingClientRect().top <= STICKY_OFFSET) index = i
+    if (children[i].getBoundingClientRect().top <= trigger) index = i
   }
   active.value = index
 }
@@ -209,16 +210,17 @@ article p {
   .sticky {
     position: sticky;
     top: 120px;
-    height: 630px;
+    height: 500px;
     background: #000;
     padding-top: 8px;
   }
   .preview {
-    position: sticky;
+    height: 500px;
   }
   .preview img {
     width: 100%;
     max-width: 500px;
+    max-height: 500px;
     pointer-events: none;
     transition: opacity 0.4s ease;
   }
