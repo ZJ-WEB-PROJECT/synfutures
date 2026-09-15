@@ -5,7 +5,7 @@
         <div class="brand-col">
           <img src="/assets/new_logo.svg" alt="SynFutures" class="logo" />
           <p class="tagline display">Simple, powerful, permissionless trading.</p>
-          <a class="btn btn-brand launch" :href="links.trade" rel="noreferrer">Launch App</a>
+          <a class="btn btn-brand launch" :href="links.trade" target="_blank" rel="noreferrer">Launch App</a>
           <!-- <div class="socials">
             <a v-for="item in socials" :key="item.label" :href="item.href" target="_blank" rel="noreferrer" :aria-label="item.label">
               <SocialIcon :name="item.label" />

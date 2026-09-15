@@ -15,7 +15,7 @@
           <h3 class="display">Borderless Summit</h3>
           <p>Bridging the gap between East and West to bring the world onchain, as one.</p>
         </div>
-        <a class="btn btn-brand" :href="links.summit" rel="noreferrer">View More</a>
+        <a class="btn btn-brand" :href="links.summit" target="_blank" rel="noreferrer">View More</a>
       </div>
     </div>
   </section>

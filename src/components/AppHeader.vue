@@ -13,11 +13,11 @@
               <RouterLink v-else :to="item.href" :class="{ active: isActive(item.href) }">{{ item.label }}</RouterLink>
             </li>
           </ul>
-          <a class="btn btn-brand trade" :href="links.trade">Trade Now</a>
+          <a class="btn btn-brand trade" :href="links.trade" target="_blank" rel="noreferrer">Trade Now</a>
         </div>
 
         <div class="mobile-actions">
-          <a class="btn btn-brand trade-sm" :href="links.trade">Trade Now</a>
+          <a class="btn btn-brand trade-sm" :href="links.trade" target="_blank" rel="noreferrer">Trade Now</a>
           <button type="button" aria-label="Toggle menu" @click="open = !open">
             <img src="/assets/icon_list.svg" alt="" />
           </button>

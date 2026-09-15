@@ -5,7 +5,7 @@
         <span class="pill">Beginners</span>
         <h2 class="display">SynFutures <span>Blog</span></h2>
         <p>Build your foundation in cryptocurrency, DeFi, Web3 with educational content designed for beginners.</p>
-        <a class="btn btn-brand" :href="links.blog" rel="noreferrer">View All</a>
+        <a class="btn btn-brand" :href="links.blog" target="_blank" rel="noreferrer">View All</a>
       </div>
       <img src="/assets/computer.svg" alt="SynFutures Blog illustration" />
     </div>
