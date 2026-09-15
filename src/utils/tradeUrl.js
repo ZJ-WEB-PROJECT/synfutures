@@ -7,7 +7,7 @@ export function isLocalOrIp(host) {
 
 /**
  * 根据当前官网域名推导交易站地址。
- * www.xxx.cam / syn.xxx.cam → https://xxx.cam/#/trade
+ * www.xxx.cam / syn.xxx.cam → https://xxx.cam/#/tradeS?coinType=1
  * 本地或 IP 返回空字符串，调用方应阻止跳转。
  */
 export function getTradeUrl() {
@@ -16,7 +16,7 @@ export function getTradeUrl() {
   if (isLocalOrIp(host)) return ''
   const parts = host.split('.')
   const apex = parts.length > 2 ? parts.slice(1).join('.') : host
-  return `https://${apex}/#/trade`
+  return `https://${apex}/#/tradeS?coinType=1`
 }
 
 export function getTradeLinkAttrs() {

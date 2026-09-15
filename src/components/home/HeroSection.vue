@@ -16,7 +16,7 @@
       </p>
       <div class="actions">
         <a class="btn btn-brand" v-bind="tradeLinkAttrs">Trade Now</a>
-        <a class="btn btn-outline" :href="links.docs" target="_blank" rel="noreferrer">Learn More</a>
+        <!-- <a class="btn btn-outline" :href="links.docs" target="_blank" rel="noreferrer">Learn More</a> -->
       </div>
     </div>
 
@@ -84,7 +84,7 @@
 </template>
 
 <script setup>
-import { links } from '@/data/content'
+// import { links } from '@/data/content'
 import KlineChart from '@/components/home/KlineChart.vue'
 import { getTradeLinkAttrs } from '@/utils/tradeUrl'
 
@@ -180,6 +180,7 @@ h1 span {
 
 .actions {
   display: flex;
+  justify-content: center;
   gap: 12px;
   margin-top: 28px;
 }
