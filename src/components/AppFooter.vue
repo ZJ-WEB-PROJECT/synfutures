@@ -3,7 +3,7 @@
     <div class="wrap content">
       <div class="top">
         <div class="brand-col">
-          <img src="/assets/new_logo.svg" alt="SynFutures" class="logo" />
+          <img src="/assets/Cervanta-logo.png" alt="SynFutures" class="logo" />
           <p class="tagline display">Simple, powerful, permissionless trading.</p>
           <a class="btn btn-brand launch" :href="links.trade" target="_blank" rel="noreferrer">Launch App</a>
           <!-- <div class="socials">
@@ -83,7 +83,9 @@ function subscribe() {
 
 .logo {
   height: 24px;
-  width: auto;
+  width: auto; 
+  object-fit: contain;
+  object-position: left;
 }
 
 .tagline {
