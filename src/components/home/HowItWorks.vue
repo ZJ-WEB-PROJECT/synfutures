@@ -21,7 +21,8 @@
       <div class="desktop">
         <div class="col" ref="list">
           <div v-for="(item, i) in steps" :key="item.step" class="sticky">
-            <article class="how-step-card" :style="{ opacity: active === -1 || i <= active ? 1 : 0.3 }">
+            <!-- <article class="how-step-card" :style="{ opacity: active === -1 || i <= active ? 1 : 0.3 }"> -->
+            <article class="how-step-card">
               <span class="pill">{{ item.step }}</span>
               <h3 class="display">{{ item.title }}</h3>
               <p>{{ item.body }}</p>
