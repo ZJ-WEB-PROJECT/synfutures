@@ -38,7 +38,7 @@
           </ul>
         </div>
       </div>
-      <p class="copy">Copyrights © 2026 SynFutures. All rights reserved.</p>
+      <p class="copy">Copyrights © 2026 Cervanta. All rights reserved.</p>
     </div>
   </footer>
 </template>
