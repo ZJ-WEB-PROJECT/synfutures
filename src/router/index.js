@@ -28,7 +28,7 @@ const router = createRouter({
 })
 
 router.afterEach((to) => {
-  document.title = to.meta.title || 'SynFutures | Trade Crypto, Stocks, and ETFs on One DEX'
+  document.title = to.meta.title || 'Cervanta | Trade Crypto, Stocks, and ETFs on One DEX'
 })
 
 export default router
