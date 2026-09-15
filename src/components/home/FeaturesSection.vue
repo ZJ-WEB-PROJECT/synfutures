@@ -5,14 +5,14 @@
       <div class="head">
         <span class="pill accent">Features</span>
         <h2 class="display">Built For <span>Every</span> Trader.</h2>
-        <p>Discover the features that make SynFutures</p>
+        <p>Discover the features that make Cervanta</p>
       </div>
       <div class="shot">
         <img
           src="/assets/rwa_info.png"
           srcset="/assets/rwa_info_p_500.png 500w, /assets/rwa_info_p_800.png 800w, /assets/rwa_info_p_1080.png 1080w, /assets/rwa_info.png 1542w"
           sizes="(max-width: 639px) 373px, (max-width: 1023px) 760px, 1028px"
-          alt="SynFutures trading terminal"
+          alt="Cervanta trading terminal"
         />
       </div>
       <div class="grid">

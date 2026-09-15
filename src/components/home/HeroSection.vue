@@ -11,7 +11,7 @@
         Trade <span>Every</span> Asset<br />One Protocol.
       </h1>
       <p class="display lede">
-        SynFutures is an onchain trading protocol for crypto and real-world assets bringing
+        Cervanta is an onchain trading protocol for crypto and real-world assets bringing
         <br class="br" />stocks, ETFs, and derivatives onchain
       </p>
       <div class="actions">

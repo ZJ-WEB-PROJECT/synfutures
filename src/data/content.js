@@ -1,16 +1,16 @@
 export const links = {
-  site: 'https://www.synfutures.com',
-  trade: 'https://synfutures.cam/',
-  docs: 'https://docs.synfutures.com/', 
-  blog: 'https://blog.synfutures.com/',
-  discord: 'https://discord.com/invite/synfutures',
-  twitter: 'https://x.com/SynFuturesDefi',
-  linkedin: 'https://www.linkedin.com/company/synfutures/',
-  telegram: 'https://t.me/synfutures_Defi',
-  summit: 'https://summit.synfutures.com/',
-  jobs: 'https://jobs.lever.co/synfutures',
+  site: 'https://www.Cervanta.com',
+  trade: 'https://Cervanta.cam/',
+  docs: 'https://docs.Cervanta.com/', 
+  blog: 'https://blog.Cervanta.com/',
+  discord: 'https://discord.com/invite/Cervanta',
+  twitter: 'https://x.com/CervantaDefi',
+  linkedin: 'https://www.linkedin.com/company/Cervanta/',
+  telegram: 'https://t.me/Cervanta_Defi',
+  summit: 'https://summit.Cervanta.com/',
+  jobs: 'https://jobs.lever.co/Cervanta',
   whitepaper: '/v3-whitepaper.pdf',
-  email: 'marketing@synfutures.xyz',
+  email: 'marketing@Cervanta.xyz',
 }
 
 export const nav = [
@@ -47,7 +47,7 @@ export const features = [
   },
   {
     title: 'Institutional-Grade Liquidity',
-    body: "Routed through tokenized stock issuer's liquidity hub, combined with SynFutures latest onchain CLOB model, giving you access to NASDAQ-level depth and execution quality on every trade.",
+    body: "Routed through tokenized stock issuer's liquidity hub, combined with Cervanta latest onchain CLOB model, giving you access to NASDAQ-level depth and execution quality on every trade.",
     icon: '/assets/feature_liquidity.svg',
   },
   {
@@ -91,8 +91,8 @@ export const steps = [
 
 export const faqs = [
   {
-    q: 'What is SynFutures?',
-    a: 'SynFutures is an onchain trading protocol for crypto and real-world assets. Trade perpetuals, tokenized stocks, and more. All settled onchain with full self-custody. Born from SynFutures perps DEX, built for every market.',
+    q: 'What is Cervanta?',
+    a: 'Cervanta is an onchain trading protocol for crypto and real-world assets. Trade perpetuals, tokenized stocks, and more. All settled onchain with full self-custody. Born from Cervanta perps DEX, built for every market.',
   },
   {
     q: 'What are tokenized stocks?',
@@ -111,12 +111,12 @@ export const faqs = [
     a: 'Trading fees vary by market and are displayed before you confirm any trade. There are no hidden charges, deposit fees, or withdrawal fees.',
   },
   {
-    q: 'Is SynFutures secure?',
-    a: 'SynFutures has been audited by leading security firms and maintains a continuous security monitoring program. All assets are held in self-custody. The protocol never takes possession of your funds.',
+    q: 'Is Cervanta secure?',
+    a: 'Cervanta has been audited by leading security firms and maintains a continuous security monitoring program. All assets are held in self-custody. The protocol never takes possession of your funds.',
   },
   {
-    q: 'Where can I find more information about SynFutures?',
-    a: 'For detailed documentation, guides, and technical references, visit <a href="https://docs.synfutures.com/" target="_blank" rel="noreferrer">docs.synfutures.com</a>.',
+    q: 'Where can I find more information about Cervanta?',
+    a: 'For detailed documentation, guides, and technical references, visit <a href="https://docs.Cervanta.com/" target="_blank" rel="noreferrer">docs.Cervanta.com</a>.',
   },
 ]
 
@@ -148,7 +148,7 @@ export const timeline = [
   { year: '2023', items: ['v2 deploys on zkSync Era', 'Raised $22 million in a Series B funding round'] },
   { year: '2024', items: ['v3 mainnet launch on Blast and expands to Base', 'Launchpad', 'Foundation +  F token launch'] },
   { year: '2025', items: ['Synthia AI Trading Agent on Base', 'Builder Program Launch + incubates MondayTrade on Monad'] },
-  { year: '2026', items: ['SynFutures RWA Launch in Partnership with Anchored'] },
+  { year: '2026', items: ['Cervanta RWA Launch in Partnership with Anchored'] },
 ]
 
 export const jobTagsA = [

@@ -25,7 +25,7 @@ jobs:
       DEPLOY_HOST: 189.24.65.219
       DEPLOY_USER: root
       DEPLOY_PORT: 22
-      DEPLOY_PATH:  /www/wwwroot/syn.synfutures.cam/dist/
+      DEPLOY_PATH:  /www/wwwroot/syn.Cervanta.cam/dist/
     steps:
       - name: Checkout
         uses: actions/checkout@v4

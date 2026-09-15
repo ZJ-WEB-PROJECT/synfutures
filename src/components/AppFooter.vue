@@ -3,7 +3,7 @@
     <div class="wrap content">
       <div class="top">
         <div class="brand-col">
-          <img src="/assets/Cervanta-logo.png" alt="SynFutures" class="logo" />
+          <img src="/assets/Cervanta-logo.png" alt="Cervanta" class="logo" />
           <p class="tagline display">Simple, powerful, permissionless trading.</p>
           <a class="btn btn-brand launch" :href="links.trade" target="_blank" rel="noreferrer">Launch App</a>
           <!-- <div class="socials">

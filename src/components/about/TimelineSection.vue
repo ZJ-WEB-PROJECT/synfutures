@@ -1,7 +1,7 @@
 <template>
   <section class="timeline">
     <div class="wrap copy">
-      <p><strong>SynFutures</strong> is one of the most established names in DeFi derivatives, with a long track record of pushing the boundaries of what is possible for onchain finance.</p>
+      <p><strong>Cervanta</strong> is one of the most established names in DeFi derivatives, with a long track record of pushing the boundaries of what is possible for onchain finance.</p>
       <p>After <strong>powering billions</strong> in trading volume across multiple versions, we're channeling that expertise into a new mission: building an onchain trading protocol for crypto and real-world assets bringing stocks, ETFs, and derivatives onchain</p>
       <p>Our story started with a line of code, but it's about people, community, and the future that we're shaping together.</p>
     </div>

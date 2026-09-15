@@ -3,7 +3,7 @@
     <div class="inner">
       <div class="bar">
         <RouterLink to="/" class="brand">
-          <img src="/assets/new_logo.png" alt="SynFutures" />
+          <img src="/assets/new_logo.png" alt="Cervanta" />
         </RouterLink>
 
         <div class="desktop">

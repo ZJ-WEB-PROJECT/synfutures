@@ -16,13 +16,13 @@ const router = createRouter({
       path: '/about-us',
       name: 'about',
       component: () => import('@/views/AboutView.vue'),
-      meta: { title: 'About Us | SynFutures' },
+      meta: { title: 'About Us | Cervanta' },
     },
     {
       path: '/:pathMatch(.*)*',
       name: 'not-found',
       component: () => import('@/views/NotFoundView.vue'),
-      meta: { title: 'Page Not Found | SynFutures' },
+      meta: { title: 'Page Not Found | Cervanta' },
     },
   ],
 })

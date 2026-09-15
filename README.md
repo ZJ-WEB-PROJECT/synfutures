@@ -1,6 +1,6 @@
-# SynFutures Official
+# Cervanta Official
 
-Vue 3 + Vite static clone of the [SynFutures](https://www.synfutures.com/) marketing site. No API requests; all copy and stats are hardcoded.
+Vue 3 + Vite static clone of the [Cervanta](https://www.Cervanta.com/) marketing site. No API requests; all copy and stats are hardcoded.
 
 ## Scripts
 

@@ -2,10 +2,10 @@
   <section id="about" class="section">
     <div class="wrap">
       <div class="head">
-        <h2 class="display">Start trading.<br />Join <span>SynFutures.</span></h2>
+        <h2 class="display">Start trading.<br />Join <span>Cervanta.</span></h2>
         <p>
           We partner with market makers, DeFi protocols, RWA issuers, and chains to bring every asset class onchain.<br />
-          Integrate with SynFutures to access unified liquidity across crypto and real-world assets.
+          Integrate with Cervanta to access unified liquidity across crypto and real-world assets.
         </p>
       </div>
       <div class="cards">
