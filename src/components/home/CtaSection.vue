@@ -12,8 +12,8 @@
         <article class="join-cta-card">
           <div class="media"><img src="/assets/10002.png" alt="" /></div>
           <div class="foot">
-            <h3 class="display">Join the Network</h3>
-            <a class="btn btn-brand" :href="`mailto:${links.email}`">Become a Partner</a>
+            <h3 class="display" style="margin-top: 40px;">Join the Network</h3>
+            <!-- <a class="btn btn-brand" :href="`mailto:${links.email}`">Become a Partner</a> -->
           </div>
         </article>
         <article class="join-cta-card">
