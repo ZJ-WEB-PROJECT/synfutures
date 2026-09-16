@@ -22,11 +22,11 @@
           </div>
           <div class="foot">
             <h3 class="display">Join the Community</h3>
-            <div class="icons">
+            <!-- <div class="icons">
               <a v-for="item in socials" :key="item.label" :href="item.href" target="_blank" rel="noreferrer" :aria-label="item.label">
                 {{ item.label[0] }}
               </a>
-            </div>
+            </div> -->
           </div>
         </article>
       </div>

