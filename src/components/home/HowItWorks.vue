@@ -18,7 +18,7 @@
         </div>
       </div>
 
-      <div class="desktop">
+      <!-- <div class="desktop">
         <div class="col" ref="list">
           <div v-for="(item, i) in steps" :key="item.step" class="sticky">
             <article
@@ -40,7 +40,7 @@
             :style="{ opacity: active === -1 || active === i ? 1 : 0 }"
           />
         </div>
-      </div>
+      </div> -->
     </div>
   </section>
 </template>

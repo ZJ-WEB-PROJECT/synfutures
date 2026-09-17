@@ -7,10 +7,12 @@
     <AppFooter />
     <a
       class="cs-float"
+      href="#"
       target="_blank"
-      :href="links.server"
+      rel="noreferrer"
       aria-label="Customer service"
       title="Customer service"
+      @click="openCustomerService"
     >
       <svg viewBox="0 0 24 24" width="26" height="26" fill="none" aria-hidden="true">
         <path
@@ -33,7 +35,9 @@
 <script setup>
 import AppHeader from '@/components/AppHeader.vue'
 import AppFooter from '@/components/AppFooter.vue'
-import { links } from '@/data/content'
+import { useCustomerService } from '@/utils/useCustomerService'
+
+const { openCustomerService } = useCustomerService()
 </script>
 
 <style scoped>

@@ -13,7 +13,7 @@
           <div class="media"><img src="/assets/10002.png" alt="" /></div>
           <div class="foot" style="margin-top: 40px;">
             <h3 class="display" >Join the Network</h3>
-            <a class="btn btn-brand" target="_blank" :href="links.server">Contact customer service</a>
+            <a class="btn btn-brand" href="#" target="_blank" rel="noreferrer" @click="openCustomerService">Contact customer service</a>
           </div>
         </article>
         <article class="join-cta-card">
@@ -35,7 +35,9 @@
 </template>
 
 <script setup>
-import { links, socials } from '@/data/content'
+import { useCustomerService } from '@/utils/useCustomerService'
+
+const { openCustomerService } = useCustomerService()
 </script>
 
 <style scoped>
