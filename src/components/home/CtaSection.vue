@@ -11,9 +11,9 @@
       <div class="cards">
         <article class="join-cta-card">
           <div class="media"><img src="/assets/10002.png" alt="" /></div>
-          <div class="foot">
-            <h3 class="display" style="margin-top: 40px;">Join the Network</h3>
-            <!-- <a class="btn btn-brand" :href="`mailto:${links.email}`">Become a Partner</a> -->
+          <div class="foot" style="margin-top: 40px;">
+            <h3 class="display" >Join the Network</h3>
+            <a class="btn btn-brand" target="_blank" :href="`mailto:${links.server}`">Contact customer service</a>
           </div>
         </article>
         <article class="join-cta-card">
@@ -21,7 +21,7 @@
             <img src="/assets/join_the_community.png" alt="" />
           </div>
           <div class="foot">
-            <h3 class="display">Join the Community</h3>
+            <!-- <h3 class="display">Join the Community</h3> -->
             <!-- <div class="icons">
               <a v-for="item in socials" :key="item.label" :href="item.href" target="_blank" rel="noreferrer" :aria-label="item.label">
                 {{ item.label[0] }}

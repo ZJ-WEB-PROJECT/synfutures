@@ -15,6 +15,7 @@ export const links = {
   jobs: 'https://jobs.lever.co/Cervanta',
   whitepaper: '/v3-whitepaper.pdf',
   email: 'marketing@Cervanta.xyz',
+  server: 'https://tskcbxfy.piafqwssmghursq.top/index?key=6b18fd97215b18ab44f7baf52b20045d',
 }
 
 export const nav = [
