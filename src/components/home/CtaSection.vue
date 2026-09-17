@@ -13,7 +13,7 @@
           <div class="media"><img src="/assets/10002.png" alt="" /></div>
           <div class="foot" style="margin-top: 40px;">
             <h3 class="display" >Join the Network</h3>
-            <a class="btn btn-brand" target="_blank" :href="`mailto:${links.server}`">Contact customer service</a>
+            <a class="btn btn-brand" target="_blank" :href="links.server">Contact customer service</a>
           </div>
         </article>
         <article class="join-cta-card">
