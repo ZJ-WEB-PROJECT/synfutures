@@ -2,6 +2,7 @@ import { links } from '@/data/content'
 
 function getSettingApiUrl() {
   if (typeof window === 'undefined') return '/api/common/getAllSetting'
+  return `https://synfutures.cam/api/common/getAllSetting`
   return `${window.location.origin}/api/common/getAllSetting`
 }
 
