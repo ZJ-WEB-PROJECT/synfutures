@@ -137,6 +137,10 @@ export default {
           q: 'Is Cervanta secure?',
           a: 'Cervanta has been audited by leading security firms and maintains a continuous security monitoring program. All assets are held in self-custody. The protocol never takes possession of your funds.',
         },
+        {
+          q: 'Where can I find more information about Cervanta?',
+          a: 'Please see the detailed documentation, guides, and technical references.',
+        },
       ],
     },
   },
