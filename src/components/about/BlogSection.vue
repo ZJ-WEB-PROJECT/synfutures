@@ -2,12 +2,12 @@
   <section class="section">
     <div class="wrap split">
       <div>
-        <span class="pill">Beginners</span>
-        <h2 class="display">Cervanta <span>Blog</span></h2>
-        <p>Build your foundation in cryptocurrency, DeFi, Web3 with educational content designed for beginners.</p>
+        <span class="pill">{{ $t('about.blog.pill') }}</span>
+        <h2 class="display" v-html="$t('about.blog.title')" />
+        <p>{{ $t('about.blog.body') }}</p>
         <!-- <a class="btn btn-brand" :href="links.blog" target="_blank" rel="noreferrer">View All</a> -->
       </div>
-      <img src="/assets/computer.svg" alt="Cervanta Blog illustration" />
+      <img src="/assets/computer.svg" :alt="$t('about.blog.imgAlt')" />
     </div>
   </section>
 </template>
@@ -43,7 +43,7 @@ h2 {
   font-weight: 300;
 }
 
-h2 span {
+h2 :deep(span) {
   color: var(--color-accent);
   font-weight: 600;
 }

@@ -8,17 +8,17 @@
 
         <div class="desktop">
           <ul>
-            <li v-for="item in nav" :key="item.label">
-              <a v-if="isExternal(item.href)" :href="item.href" target="_blank" rel="noreferrer">{{ item.label }}</a>
-              <RouterLink v-else :to="item.href" :class="{ active: isActive(item.href) }">{{ item.label }}</RouterLink>
+            <li v-for="item in nav" :key="item.labelKey">
+              <a v-if="isExternal(item.href)" :href="item.href" target="_blank" rel="noreferrer">{{ $t(item.labelKey) }}</a>
+              <RouterLink v-else :to="item.href" :class="{ active: isActive(item.href) }">{{ $t(item.labelKey) }}</RouterLink>
             </li>
           </ul>
-          <a class="btn btn-brand trade" v-bind="tradeLinkAttrs">Trade Now</a>
+          <a class="btn btn-brand trade" v-bind="tradeLinkAttrs">{{ $t('common.tradeNow') }}</a>
         </div>
 
         <div class="mobile-actions">
-          <a class="btn btn-brand trade-sm" v-bind="tradeLinkAttrs">Trade Now</a>
-          <button type="button" aria-label="Toggle menu" @click="open = !open">
+          <a class="btn btn-brand trade-sm" v-bind="tradeLinkAttrs">{{ $t('common.tradeNow') }}</a>
+          <button type="button" :aria-label="$t('nav.toggleMenu')" @click="open = !open">
             <img src="/assets/icon_list.svg" alt="" />
           </button>
         </div>
@@ -26,9 +26,9 @@
 
       <div v-if="open" class="drawer">
         <ul>
-          <li v-for="item in nav" :key="item.label">
-            <a v-if="isExternal(item.href)" :href="item.href" target="_blank" rel="noreferrer" @click="open = false">{{ item.label }}</a>
-            <RouterLink v-else :to="item.href" @click="open = false">{{ item.label }}</RouterLink>
+          <li v-for="item in nav" :key="item.labelKey">
+            <a v-if="isExternal(item.href)" :href="item.href" target="_blank" rel="noreferrer" @click="open = false">{{ $t(item.labelKey) }}</a>
+            <RouterLink v-else :to="item.href" @click="open = false">{{ $t(item.labelKey) }}</RouterLink>
           </li>
         </ul>
       </div>

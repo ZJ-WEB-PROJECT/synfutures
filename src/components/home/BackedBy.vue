@@ -1,10 +1,10 @@
 <template>
   <section id="partners" class="section">
     <div class="wrap">
-      <h2 class="display">Backed By<br /><span>The Industry Best</span></h2>
+      <h2 class="display" v-html="$t('home.backed.title')" />
       <div class="logos">
         <div v-for="item in investors" :key="item.logo">
-          <img :src="item.logo" :alt="item.name" width="145" height="56" />
+          <img :src="item.logo" :alt="$t('home.backed.investor', { n: item.id })" width="145" height="56" />
         </div>
       </div>
     </div>
@@ -30,7 +30,7 @@ h2 {
   text-align: center;
 }
 
-h2 span {
+h2 :deep(span) {
   font-weight: 700;
 }
 

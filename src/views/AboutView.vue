@@ -5,8 +5,8 @@
     <HiringSection />
     <section id="stats" class="numbers">
       <div class="wrap">
-        <h2 class="display">By the <span>Numbers</span></h2>
-        <p>Repurpose impressive stats here, framed around credibility rather than product.</p>
+        <h2 class="display" v-html="$t('about.numbers.title')" />
+        <p>{{ $t('about.numbers.body') }}</p>
         <StatsGrid />
       </div>
     </section>
@@ -36,7 +36,7 @@ h2 {
   font-weight: 300;
 }
 
-h2 span {
+h2 :deep(span) {
   font-weight: 600;
 }
 

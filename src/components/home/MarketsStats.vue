@@ -3,8 +3,8 @@
     <div class="wrap">
       <div class="top">
         <div>
-          <h2 class="display">Real Markets. Real Assets. <span>Onchain.</span></h2>
-          <p>A protocol refined across three versions, trusted by<br class="br" />traders worldwide.</p>
+          <h2 class="display" v-html="$t('home.stats.title')" />
+          <p v-html="$t('home.stats.subtitle')" />
         </div>
         <div class="bars" aria-hidden="true">
           <span v-for="n in 6" :key="n" />
@@ -40,7 +40,7 @@ h2 {
   line-height: 1.25;
 }
 
-h2 span {
+h2 :deep(span) {
   font-weight: 600;
 }
 
@@ -50,7 +50,7 @@ p {
   font-size: 14px;
 }
 
-.br {
+:deep(.br) {
   display: none;
 }
 
@@ -81,7 +81,7 @@ p {
   .section { padding: 112px 0; }
   h2 { font-size: 48px; }
   p { font-size: 18px; }
-  .br { display: block; }
+  :deep(.br) { display: block; }
   .bars { height: 250px; width: 582px; }
 }
 

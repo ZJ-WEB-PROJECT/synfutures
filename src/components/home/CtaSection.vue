@@ -2,18 +2,15 @@
   <section id="about" class="section">
     <div class="wrap">
       <div class="head">
-        <h2 class="display">Start trading.<br />Join <span>Cervanta.</span></h2>
-        <p>
-          We partner with market makers, DeFi protocols, RWA issuers, and chains to bring every asset class onchain.<br />
-          Integrate with Cervanta to access unified liquidity across crypto and real-world assets.
-        </p>
+        <h2 class="display" v-html="$t('home.cta.title')" />
+        <p v-html="$t('home.cta.body')" />
       </div>
       <div class="cards">
         <article class="join-cta-card">
           <div class="media"><img src="/assets/10002.png" alt="" /></div>
           <div class="foot" style="margin-top: 40px;">
-            <h3 class="display" >Join the Network</h3>
-            <a class="btn btn-brand" href="#" target="_blank" rel="noreferrer" @click="openCustomerService">Contact customer service</a>
+            <h3 class="display">{{ $t('home.cta.joinNetwork') }}</h3>
+            <a class="btn btn-brand" href="#" target="_blank" rel="noreferrer" @click="openCustomerService">{{ $t('home.cta.contactCs') }}</a>
           </div>
         </article>
         <article class="join-cta-card">
@@ -57,7 +54,7 @@ h2 {
   font-weight: 300;
 }
 
-h2 span {
+h2 :deep(span) {
   font-weight: 700;
 }
 

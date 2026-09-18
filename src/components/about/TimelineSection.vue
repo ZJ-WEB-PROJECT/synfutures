@@ -1,21 +1,23 @@
 <template>
   <section class="timeline">
     <div class="wrap copy">
-      <p><strong>Cervanta</strong> is one of the most established names in DeFi derivatives, with a long track record of pushing the boundaries of what is possible for onchain finance.</p>
-      <p>After <strong>powering billions</strong> in trading volume across multiple versions, we're channeling that expertise into a new mission: building an onchain trading protocol for crypto and real-world assets bringing stocks, ETFs, and derivatives onchain</p>
-      <p>Our story started with a line of code, but it's about people, community, and the future that we're shaping together.</p>
+      <p v-html="$t('about.timeline.p1')" />
+      <p v-html="$t('about.timeline.p2')" />
+      <p>{{ $t('about.timeline.p3') }}</p>
     </div>
     <div class="years wrap">
       <article v-for="item in timeline" :key="item.year">
         <h2 class="display">{{ item.year }}</h2>
-        <p v-for="event in item.items" :key="event">{{ event }}</p>
+        <p v-for="event in item.events" :key="event">{{ event }}</p>
       </article>
     </div>
   </section>
 </template>
 
 <script setup>
-import { timeline } from '@/data/content'
+import { useLocaleList } from '@/i18n'
+
+const timeline = useLocaleList('about.timeline.items')
 </script>
 
 <style scoped>
@@ -40,7 +42,7 @@ import { timeline } from '@/data/content'
   margin-top: 32px;
 }
 
-strong {
+.copy :deep(strong) {
   color: #fff;
   font-weight: 600;
 }

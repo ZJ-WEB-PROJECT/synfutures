@@ -10,8 +10,8 @@
       href="#"
       target="_blank"
       rel="noreferrer"
-      aria-label="Customer service"
-      title="Customer service"
+      :aria-label="$t('common.customerService')"
+      :title="$t('common.customerService')"
       @click="openCustomerService"
     >
       <svg viewBox="0 0 24 24" width="26" height="26" fill="none" aria-hidden="true">

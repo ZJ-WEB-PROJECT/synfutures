@@ -2,15 +2,15 @@
   <section class="section">
     <div class="wrap">
       <div class="head">
-        <h2 class="display desktop">Build together with <span>Cervanta.</span></h2>
-        <h2 class="display mobile">Building Together<br /><span>The Future.</span></h2>
-        <a class="btn btn-outline hide-sm" v-bind="tradeLinkAttrs">Trade Now</a>
+        <h2 class="display desktop" v-html="$t('about.hiring.titleDesktop')" />
+        <h2 class="display mobile" v-html="$t('about.hiring.titleMobile')" />
+        <a class="btn btn-outline hide-sm" v-bind="tradeLinkAttrs">{{ $t('common.tradeNow') }}</a>
       </div>
       <div class="grid">
         <div class="hire">
           <div class="hire-top">
-            <h3 class="display">We're <span>hiring!</span></h3>
-            <a class="btn btn-outline" v-bind="tradeLinkAttrs">Join Us</a>
+            <h3 class="display" v-html="$t('about.hiring.hiring')" />
+            <a class="btn btn-outline" v-bind="tradeLinkAttrs">{{ $t('about.hiring.joinUs') }}</a>
           </div>
           <div class="tags">
             <div class="row marquee-left">
@@ -22,9 +22,9 @@
           </div>
         </div>
         <div class="quote">
-          <img class="desk" src="/assets/build_together.svg" alt="United by a belief in permissionless finance." />
+          <img class="desk" src="/assets/build_together.svg" :alt="$t('about.hiring.quoteAlt')" />
           <div class="mob">
-            <p>United by a belief in<br /><strong>permissionless</strong><br /><strong>finance.</strong></p>
+            <p v-html="$t('about.hiring.quoteMobile')" />
           </div>
         </div>
       </div>
@@ -33,10 +33,28 @@
 </template>
 
 <script setup>
-import { jobTagsA, jobTagsB } from '@/data/content'
+import { computed } from 'vue'
+import { jobTagVariantsA, jobTagVariantsB } from '@/data/content'
 import { getTradeLinkAttrs } from '@/utils/tradeUrl'
+import { useLocaleList } from '@/i18n'
 
 const tradeLinkAttrs = getTradeLinkAttrs()
+const jobTagLabelsA = useLocaleList('about.hiring.jobTagsA')
+const jobTagLabelsB = useLocaleList('about.hiring.jobTagsB')
+
+const jobTagsA = computed(() =>
+  jobTagLabelsA.value.map((label, i) => ({
+    label,
+    variant: jobTagVariantsA[i],
+  })),
+)
+
+const jobTagsB = computed(() =>
+  jobTagLabelsB.value.map((label, i) => ({
+    label,
+    variant: jobTagVariantsB[i],
+  })),
+)
 </script>
 
 <style scoped>
@@ -59,8 +77,8 @@ h2 {
   font-weight: 300;
 }
 
-h2 span,
-h3 span {
+h2 :deep(span),
+h3 :deep(span) {
   font-weight: 600;
 }
 

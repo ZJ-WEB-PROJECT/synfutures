@@ -3,16 +3,16 @@
     <img class="deco" src="/assets/68e6a4_vector_30.png" alt="" />
     <div class="wrap">
       <div class="head">
-        <span class="pill accent">Features</span>
-        <h2 class="display">Built For <span>Every</span> Trader.</h2>
-        <p>Discover the features that make Cervanta</p>
+        <span class="pill accent">{{ $t('home.features.pill') }}</span>
+        <h2 class="display" v-html="$t('home.features.title')" />
+        <p>{{ $t('home.features.subtitle') }}</p>
       </div>
       <div class="shot">
         <img
           src="/assets/rwa_info.png?v=2"
           srcset="/assets/rwa_info_p_500.png?v=2 500w, /assets/rwa_info_p_800.png?v=2 800w, /assets/rwa_info_p_1080.png?v=2 1080w, /assets/rwa_info.png?v=2 1542w"
           sizes="(max-width: 639px) 373px, (max-width: 1023px) 760px, 1028px"
-          alt="Cervanta trading terminal"
+          :alt="$t('home.features.shotAlt')"
         />
       </div>
       <div class="grid">
@@ -27,7 +27,17 @@
 </template>
 
 <script setup>
-import { features } from '@/data/content'
+import { computed } from 'vue'
+import { featureIcons } from '@/data/content'
+import { useLocaleList } from '@/i18n'
+
+const featureItems = useLocaleList('home.features.items')
+const features = computed(() =>
+  featureItems.value.map((item, i) => ({
+    ...item,
+    icon: featureIcons[i],
+  })),
+)
 </script>
 
 <style scoped>
@@ -72,7 +82,7 @@ h2 {
   line-height: 1.2;
 }
 
-h2 span {
+h2 :deep(span) {
   color: var(--color-accent);
   font-weight: 600;
 }

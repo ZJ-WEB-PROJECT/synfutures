@@ -2,13 +2,10 @@
   <section class="story">
     <video class="video" src="/assets/blog_video.mp4" autoplay muted loop></video>
     <div class="wrap">
-      <span class="pill">Our Story</span>
-      <h1 class="display">
-        Onchain Markets
-        <span>Fair, Open, And<br />Accessible.</span>
-      </h1>
-      <p>A global team redefining how markets are built and traded, united by a belief in permissionless finance.</p>
-      <a class="btn btn-outline" v-bind="tradeLinkAttrs">Trade Now</a>
+      <span class="pill">{{ $t('about.story.pill') }}</span>
+      <h1 class="display" v-html="$t('about.story.title')" />
+      <p>{{ $t('about.story.body') }}</p>
+      <a class="btn btn-outline" v-bind="tradeLinkAttrs">{{ $t('common.tradeNow') }}</a>
     </div>
   </section>
 </template>
@@ -63,7 +60,7 @@ h1 {
   line-height: 1.1;
 }
 
-h1 span {
+h1 :deep(span) {
   color: var(--color-accent);
 }
 

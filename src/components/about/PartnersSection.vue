@@ -1,8 +1,8 @@
 <template>
   <section class="section">
     <div class="wrap">
-      <span class="pill">Partners</span>
-      <h2 class="display">Trusted by Industry<br /><span>Leaders</span></h2>
+      <span class="pill">{{ $t('about.partners.pill') }}</span>
+      <h2 class="display" v-html="$t('about.partners.title')" />
     </div>
     <div class="marquee">
       <div class="partner-marquee track">
@@ -12,10 +12,10 @@
     <div class="wrap">
       <div class="summit">
         <div>
-          <h3 class="display">Borderless Summit</h3>
-          <p>Bridging the gap between East and West to bring the world onchain, as one.</p>
+          <h3 class="display">{{ $t('about.partners.summitTitle') }}</h3>
+          <p>{{ $t('about.partners.summitBody') }}</p>
         </div>
-        <a class="btn btn-brand" v-bind="tradeLinkAttrs">View More</a>
+        <a class="btn btn-brand" v-bind="tradeLinkAttrs">{{ $t('about.partners.viewMore') }}</a>
       </div>
     </div>
   </section>
@@ -50,7 +50,7 @@ h2 {
   font-weight: 300;
 }
 
-h2 span {
+h2 :deep(span) {
   font-weight: 600;
 }
 

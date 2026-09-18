@@ -9,8 +9,8 @@
   --color-text-body: #abb5ba;
   --color-text-muted: #446e6e;
   --color-line: #1e3436;
-  --font-sans: 'DM Sans', system-ui, sans-serif;
-  --font-display: 'Hubot Sans', 'DM Sans', sans-serif;
+  --font-sans: 'DM Sans', 'Noto Sans JP', system-ui, sans-serif;
+  --font-display: 'Hubot Sans', 'DM Sans', 'Noto Sans JP', sans-serif;
   --max: 1440px;
 }
 

@@ -4,18 +4,13 @@
     <div class="glow-b" />
     <div class="wrap center">
       <div class="kicker">
-        <span class="new">New</span>
-        <span>Built for every market.</span>
+        <span class="new">{{ $t('home.hero.kickerNew') }}</span>
+        <span>{{ $t('home.hero.kicker') }}</span>
       </div>
-      <h1 class="hero-title display">
-        Trade <span>Every</span> Asset<br />One Protocol.
-      </h1>
-      <p class="display lede">
-        Cervanta is an onchain trading protocol for crypto and real-world assets bringing
-        <br class="br" />stocks, ETFs, and derivatives onchain
-      </p>
+      <h1 class="hero-title display" v-html="$t('home.hero.title')" />
+      <p class="display lede" v-html="$t('home.hero.lede')" />
       <div class="actions">
-        <a class="btn btn-brand" v-bind="tradeLinkAttrs">Trade Now</a>
+        <a class="btn btn-brand" v-bind="tradeLinkAttrs">{{ $t('common.tradeNow') }}</a>
         <!-- <a class="btn btn-outline" :href="links.docs" target="_blank" rel="noreferrer">Learn More</a> -->
       </div>
     </div>
@@ -30,16 +25,16 @@
         <path d="M8 42c2-9 7.2-14 16-14s14 5 16 14" stroke="currentColor" stroke-width="3.2" stroke-linecap="round" />
       </svg>
       <div class="num display">433.2K</div>
-      <div class="label">All-time Traders</div>
+      <div class="label">{{ $t('home.hero.allTimeTraders') }}</div>
     </div>
 
     <div class="card mid hero-stat-card desktop-only">
       <img src="/assets/cumulative_trading_volume.png" alt="" />
       <div class="mid-row">
         <div class="big display">$329.9B</div>
-        <div class="chip"><span /><em>Trade</em></div>
+        <div class="chip"><span /><em>{{ $t('home.hero.trade') }}</em></div>
       </div>
-      <div class="label">Cumulative Trading Volume</div>
+      <div class="label">{{ $t('home.hero.cumulativeVolume') }}</div>
     </div>
 
     <div class="card right hero-stat-card desktop-only">
@@ -48,7 +43,7 @@
         <circle cx="22" cy="22" r="8" fill="none" stroke="#F1F434" stroke-width="3" />
       </svg>
       <div class="num display">351</div>
-      <div class="label">Markets Listed</div>
+      <div class="label">{{ $t('home.hero.marketsListed') }}</div>
     </div>
 
     <div class="mobile-stats">
@@ -60,7 +55,7 @@
             <circle cx="22" cy="22" r="8" fill="none" stroke="#F1F434" stroke-width="3" />
           </svg>
           <div class="num display">351</div>
-          <div class="label">Markets Listed</div>
+          <div class="label">{{ $t('home.hero.marketsListed') }}</div>
         </div>
         <div class="card hero-stat-card">
           <svg class="icon-yellow" width="48" height="48" viewBox="0 0 48 48" fill="none">
@@ -68,16 +63,16 @@
             <path d="M8 42c2-9 7.2-14 16-14s14 5 16 14" stroke="currentColor" stroke-width="3.2" stroke-linecap="round" />
           </svg>
           <div class="num display">433.2K</div>
-          <div class="label">All-time Traders</div>
+          <div class="label">{{ $t('home.hero.allTimeTraders') }}</div>
         </div>
       </div>
       <div class="card mid hero-stat-card">
         <img src="/assets/cumulative_trading_volume.png" alt="" />
         <div class="mid-row">
           <div class="big display">$329.9B</div>
-          <div class="chip"><span /><em>Trade</em></div>
+          <div class="chip"><span /><em>{{ $t('home.hero.trade') }}</em></div>
         </div>
-        <div class="label">Cumulative Trading Volume</div>
+        <div class="label">{{ $t('home.hero.cumulativeVolume') }}</div>
       </div>
     </div>
   </section>
@@ -161,7 +156,7 @@ h1 {
   line-height: 1.1;
 }
 
-h1 span {
+h1 :deep(span) {
   color: var(--color-accent);
   font-weight: 600;
 }
@@ -174,7 +169,7 @@ h1 span {
   line-height: 1.45;
 }
 
-.br {
+:deep(.br) {
   display: none;
 }
 
@@ -343,7 +338,7 @@ h1 span {
     font-size: 18px;
   }
 
-  .br {
+  :deep(.br) {
     display: block;
   }
 

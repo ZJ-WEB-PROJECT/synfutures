@@ -1,7 +1,7 @@
 <template>
   <section id="faqs" class="section">
     <div class="wrap">
-      <h2 class="display">FAQs</h2>
+      <h2 class="display">{{ $t('home.faq.title') }}</h2>
       <div class="box">
         <div v-for="(item, i) in faqs" :key="item.q" :class="{ lined: i > 0 }">
           <button type="button" :aria-expanded="open === i" @click="open = open === i ? -1 : i">
@@ -21,8 +21,9 @@
 
 <script setup>
 import { ref } from 'vue'
-import { faqs } from '@/data/content'
+import { useLocaleList } from '@/i18n'
 
+const faqs = useLocaleList('home.faq.items')
 const open = ref(0)
 </script>
 

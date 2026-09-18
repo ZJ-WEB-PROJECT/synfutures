@@ -1,9 +1,9 @@
 <template>
   <section class="not-found">
     <p class="code">404</p>
-    <h1 class="display">Page not found</h1>
-    <p>The page you are looking for doesn’t exist or has been moved.</p>
-    <RouterLink to="/">Back to home</RouterLink>
+    <h1 class="display">{{ $t('notFound.title') }}</h1>
+    <p>{{ $t('notFound.body') }}</p>
+    <RouterLink to="/">{{ $t('notFound.backHome') }}</RouterLink>
   </section>
 </template>
 

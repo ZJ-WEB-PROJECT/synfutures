@@ -1,5 +1,6 @@
 import { createRouter, createWebHistory } from 'vue-router'
 import HomeView from '@/views/HomeView.vue'
+import i18n from '@/i18n'
 
 const router = createRouter({
   history: createWebHistory(),
@@ -11,24 +12,25 @@ const router = createRouter({
     return { top: 0 }
   },
   routes: [
-    { path: '/', name: 'home', component: HomeView },
+    { path: '/', name: 'home', component: HomeView, meta: { titleKey: 'meta.homeTitle' } },
     {
       path: '/about-us',
       name: 'about',
       component: () => import('@/views/AboutView.vue'),
-      meta: { title: 'About Us | Cervanta' },
+      meta: { titleKey: 'meta.aboutTitle' },
     },
     {
       path: '/:pathMatch(.*)*',
       name: 'not-found',
       component: () => import('@/views/NotFoundView.vue'),
-      meta: { title: 'Page Not Found | Cervanta' },
+      meta: { titleKey: 'meta.notFoundTitle' },
     },
   ],
 })
 
 router.afterEach((to) => {
-  document.title = to.meta.title || 'Cervanta | Trade Crypto, Stocks, and ETFs on One DEX'
+  document.title = i18n.global.t(to.meta.titleKey || 'meta.homeTitle')
+  document.documentElement.lang = i18n.global.locale.value
 })
 
 export default router

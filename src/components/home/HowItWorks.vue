@@ -2,9 +2,9 @@
   <section id="how-it-works" class="how">
     <div class="wrap">
       <div class="head">
-        <span class="pill">How it Works</span>
-        <h2 class="display">From Stocks to Crypto.<br /><span>All Onchain.</span></h2>
-        <p>Trade tokenized equities, ETFs, and crypto perpetuals. All from a single interface. Settled onchain, held in your wallet.</p>
+        <span class="pill">{{ $t('home.how.pill') }}</span>
+        <h2 class="display" v-html="$t('home.how.title')" />
+        <p>{{ $t('home.how.subtitle') }}</p>
       </div>
 
       <div class="mobile">
@@ -14,7 +14,7 @@
             <h3 class="display">{{ item.title }}</h3>
             <p>{{ item.body }}</p> 
           </article>
-          <img :src="item.image" :alt="`${item.title} interface`" />
+          <img :src="item.image" :alt="$t('home.how.interfaceAlt', { title: item.title })" />
         </div>
       </div>
 
@@ -46,8 +46,17 @@
 </template>
 
 <script setup>
-import { onMounted, onUnmounted, ref } from 'vue'
-import { steps } from '@/data/content'
+import { computed, onMounted, onUnmounted, ref } from 'vue'
+import { stepImages } from '@/data/content'
+import { useLocaleList } from '@/i18n'
+
+const stepItems = useLocaleList('home.how.steps')
+const steps = computed(() =>
+  stepItems.value.map((item, i) => ({
+    ...item,
+    image: stepImages[i],
+  })),
+)
 
 const STICKY_OFFSET = 360
 const list = ref(null)
@@ -139,7 +148,7 @@ h2 {
   line-height: 1.08;
 }
 
-h2 span {
+h2 :deep(span) {
   color: var(--color-accent);
   font-weight: 600;
 }

@@ -4,50 +4,53 @@
       <div class="top">
         <div class="brand-col">
           <img src="/assets/Cervanta-logo.png" alt="Cervanta" class="logo" />
-          <p class="tagline display">Simple, powerful, permissionless trading.</p>
-          <a class="btn btn-brand launch" v-bind="tradeLinkAttrs">Launch App</a>
+          <p class="tagline display">{{ $t('footer.tagline') }}</p>
+          <a class="btn btn-brand launch" v-bind="tradeLinkAttrs">{{ $t('footer.launchApp') }}</a>
           <!-- <div class="socials">
             <a v-for="item in socials" :key="item.label" :href="item.href" target="_blank" rel="noreferrer" :aria-label="item.label">
               <SocialIcon :name="item.label" />
             </a>
           </div> -->
           <form class="news" @submit.prevent="subscribe">
-            <p>Join our newsletter</p>
+            <p>{{ $t('footer.newsletter') }}</p>
             <div class="row">
               <div class="field">
-                <input v-model="email" type="email" required placeholder="Enter your email"
-                  aria-label="Email address" />
+                <input v-model="email" type="email" required :placeholder="$t('footer.emailPlaceholder')"
+                  :aria-label="$t('footer.emailAria')" />
               </div>
-              <button class="btn btn-brand" type="submit">{{ sending ? 'Sending...' : 'Subscribe' }}</button>
+              <button class="btn btn-brand" type="submit">{{ sending ? $t('footer.sending') : $t('footer.subscribe') }}</button>
             </div>
             <p v-if="toast" class="toast">{{ toast }}</p>
           </form>
         </div>
         <div class="cols">
           <ul>
-            <li v-for="item in footerPrimary" :key="item.label">
-              <RouterLink :to="item.href">{{ item.label }}</RouterLink>
+            <li v-for="item in footerPrimary" :key="item.labelKey">
+              <RouterLink :to="item.href">{{ $t(item.labelKey) }}</RouterLink>
             </li>
           </ul>
           <ul>
-            <li v-for="item in footerSecondary" :key="item.label">
+            <li v-for="item in footerSecondary" :key="item.labelKey">
               <a v-if="isExternal(item.href) || item.href.endsWith('.pdf')" :href="item.href"
-                :target="item.href.startsWith('http') ? '_blank' : undefined" rel="noreferrer">{{ item.label }}</a>
-              <RouterLink v-else :to="item.href">{{ item.label }}</RouterLink>
+                :target="item.href.startsWith('http') ? '_blank' : undefined" rel="noreferrer">{{ $t(item.labelKey) }}</a>
+              <RouterLink v-else :to="item.href">{{ $t(item.labelKey) }}</RouterLink>
             </li>
           </ul>
         </div>
       </div>
-      <p class="copy">Copyrights © 2026 Cervanta. All rights reserved.</p>
+      <p class="copy">{{ $t('footer.copyright') }}</p>
     </div>
   </footer>
 </template>
 
 <script setup>
 import { ref } from 'vue'
+import { useI18n } from 'vue-i18n'
 import { footerPrimary, footerSecondary, socials } from '@/data/content'
 import SocialIcon from '@/components/SocialIcon.vue'
 import { getTradeLinkAttrs } from '@/utils/tradeUrl'
+
+const { t } = useI18n()
 
 const tradeLinkAttrs = getTradeLinkAttrs()
 
@@ -64,7 +67,7 @@ function subscribe() {
   setTimeout(() => {
     sending.value = false
     email.value = ''
-    toast.value = 'Subscribed successfully!'
+    toast.value = t('footer.subscribed')
     setTimeout(() => (toast.value = ''), 3000)
   }, 400)
 }

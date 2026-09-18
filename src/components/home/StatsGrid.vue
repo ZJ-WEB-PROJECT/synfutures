@@ -2,27 +2,27 @@
   <div class="grid">
     <div class="volume">
       <span class="display value">{{ volume }}</span>
-      <span class="caption">Cumulative Trading Volume</span>
+      <span class="caption">{{ $t('stats.cumulativeVolume') }}</span>
     </div>
     <div class="stat-card vault">
-      <span>RWA Vaults</span>
-      <strong class="display">COMING SOON</strong>
+      <span>{{ $t('stats.rwaVaults') }}</span>
+      <strong class="display">{{ $t('stats.comingSoon') }}</strong>
     </div>
     <div class="stat-card traders">
-      <span>{{ tradersLabel }}</span>
+      <span>{{ $t('stats.allTimeTraders') }}</span>
       <strong class="display accent">{{ traders }}</strong>
       <img src="/assets/area_charts.png" alt="" />
     </div>
     <div class="stat-card markets">
       <div>
-        <span>Markets<br />Listed</span>
+        <span v-html="$t('stats.marketsListed')" />
         <strong class="display accent">{{ markets }}</strong>
       </div>
       <img src="/assets/group_482100.svg" alt="" />
     </div>
     <div class="stat-card rwa">
       <div>
-        <span>Tokenized TradFi Assets</span>
+        <span>{{ $t('stats.tokenizedAssets') }}</span>
         <strong class="display">{{ rwa }}</strong>
       </div>
       <img src="/assets/stocks.png" alt="" />
@@ -33,7 +33,6 @@
 <script setup>
 const volume = '$320.9B'
 const traders = '433.2K'
-const tradersLabel = 'All-time Traders'
 const markets = '351'
 const rwa = '50+'
 </script>
