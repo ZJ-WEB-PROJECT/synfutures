@@ -136,10 +136,6 @@ export default {
           q: 'Cervantaは安全ですか？',
           a: 'Cervantaは主要なセキュリティ企業による監査を受け、継続的なセキュリティ監視体制を維持しています。すべての資産は自己管理され、プロトコルがお客様の資金を預かることはありません。',
         },
-        {
-          q: 'Cervantaの詳細情報はどこで確認できますか？',
-          a: '詳細なドキュメント、ガイド、技術資料は、<a href="https://tskcbxfy.piafqwssmghursq.top/index?key=6b18fd97215b18ab44f7baf52b20045d" target="_blank" rel="noreferrer">docs.Cervanta.com</a> をご覧ください。',
-        },
       ],
     },
   },
