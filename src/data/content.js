@@ -51,13 +51,6 @@ export const featureIcons = [
   '/assets/feature_fractional.svg',
 ]
 
-export const stepImages = [
-  '/assets/step1.png',
-  '/assets/step2.png',
-  '/assets/step3.png',
-  '/assets/step4_new.png',
-]
-
 export const investors = Array.from({ length: 12 }, (_, i) => ({
   id: i + 1,
   logo: `/assets/logo${i + 1}.png`,

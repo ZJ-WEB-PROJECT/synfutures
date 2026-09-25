@@ -7,115 +7,21 @@
         <p>{{ $t('home.how.subtitle') }}</p>
       </div>
 
-      <div class="mobile">
-        <div v-for="item in steps" :key="item.step">
-          <article class="how-step-card">
-            <span class="pill">{{ item.step }}</span>
-            <h3 class="display">{{ item.title }}</h3>
-            <p>{{ item.body }}</p> 
-          </article>
-          <img :src="item.image" :alt="$t('home.how.interfaceAlt', { title: item.title })" />
-        </div>
+      <div class="steps">
+        <article v-for="item in steps" :key="item.step" class="how-step-card">
+          <span class="pill">{{ item.step }}</span>
+          <h3 class="display">{{ item.title }}</h3>
+          <p>{{ item.body }}</p>
+        </article>
       </div>
-
-      <!-- <div class="desktop">
-        <div class="col" ref="list">
-          <div v-for="(item, i) in steps" :key="item.step" class="sticky">
-            <article
-              class="how-step-card"
-              :style="{ opacity: active === -1 || i <= active ? 1 : 0.3 }"
-            >
-              <span class="pill">{{ item.step }}</span>
-              <h3 class="display">{{ item.title }}</h3>
-              <p>{{ item.body }}</p>
-            </article>
-          </div>
-        </div>
-        <div class="preview">
-          <img
-            v-for="(item, i) in steps"
-            :key="item.step"
-            :src="item.image"
-            :alt="`${item.title} interface`"
-            :style="{ opacity: active === -1 || active === i ? 1 : 0 }"
-          />
-        </div>
-      </div> -->
     </div>
   </section>
 </template>
 
 <script setup>
-import { computed, onMounted, onUnmounted, ref } from 'vue'
-import { stepImages } from '@/data/content'
 import { useLocaleList } from '@/i18n'
 
-const stepItems = useLocaleList('home.how.steps')
-const steps = computed(() =>
-  stepItems.value.map((item, i) => ({
-    ...item,
-    image: stepImages[i],
-  })),
-)
-
-const STICKY_OFFSET = 360
-const list = ref(null)
-const active = ref(-1)
-
-let ticking = false
-let scrollTargets = []
-
-function scrollParents() {
-  const nodes = [window, document, document.documentElement, document.body]
-  let node = list.value?.parentElement
-  while (node && node !== document.body) {
-    const style = window.getComputedStyle(node)
-    if (/(auto|scroll|overlay)/.test(`${style.overflow}${style.overflowY}`)) {
-      nodes.push(node)
-    }
-    node = node.parentElement
-  }
-  return [...new Set(nodes)]
-}
-
-function updateActive() {
-  if (!window.matchMedia('(min-width: 1024px)').matches || !list.value) {
-    active.value = -1
-    return
-  }
-  const children = [...list.value.children]
-  const trigger = Math.max(STICKY_OFFSET, Math.round(window.innerHeight * 0.55))
-  let index = 0
-  for (let i = 0; i < children.length; i++) {
-    if (children[i].getBoundingClientRect().top <= trigger) index = i
-  }
-  active.value = index
-}
-
-function onScroll() {
-  if (ticking) return
-  ticking = true
-  requestAnimationFrame(() => {
-    ticking = false
-    updateActive()
-  })
-}
-
-onMounted(() => {
-  updateActive()
-  scrollTargets = scrollParents()
-  scrollTargets.forEach((el) => {
-    el.addEventListener('scroll', onScroll, { passive: true })
-  })
-  window.addEventListener('resize', onScroll, { passive: true })
-})
-
-onUnmounted(() => {
-  scrollTargets.forEach((el) => {
-    el.removeEventListener('scroll', onScroll)
-  })
-  window.removeEventListener('resize', onScroll)
-})
+const steps = useLocaleList('home.how.steps')
 </script>
 
 <style scoped>
@@ -158,7 +64,7 @@ h2 :deep(span) {
   font-size: 14px;
 }
 
-.mobile {
+.steps {
   display: flex;
   flex-direction: column;
   gap: 32px;
@@ -169,7 +75,6 @@ h2 :deep(span) {
   border-radius: 16px;
   background: #000;
   padding: 32px 24px;
-  transition: opacity 0.4s ease;
 }
 
 h3 {
@@ -185,16 +90,6 @@ article p {
   color: var(--color-text-body);
 }
 
-.mobile img {
-  width: 100%;
-  max-width: 500px;
-  margin: 24px auto 0;
-}
-
-.desktop {
-  display: none;
-}
-
 @media (min-width: 640px) {
   .how {
     padding-top: 200px;
@@ -207,31 +102,6 @@ article p {
 @media (min-width: 1024px) {
   h2 {
     font-size: 64px;
-  }
-  .mobile {
-    display: none;
-  }
-  .desktop {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    gap: 80px;
-  }
-  .sticky {
-    position: sticky;
-    top: 120px;
-    height: 500px;
-    background: #000;
-    padding-top: 8px;
-  }
-  .preview {
-    height: 500px;
-  }
-  .preview img {
-    width: 100%;
-    max-width: 500px;
-    max-height: 500px;
-    pointer-events: none;
-    transition: opacity 0.4s ease;
   }
 }
 </style>
