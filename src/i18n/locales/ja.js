@@ -8,6 +8,7 @@ export default {
   },
   common: {
     customerService: 'カスタマーサービス',
+    back: '戻る',
     tradeNow: '今すぐ取引',
   },
   nav: {

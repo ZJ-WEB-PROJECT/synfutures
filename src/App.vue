@@ -8,8 +8,6 @@
     <a
       class="cs-float"
       href="#"
-      target="_blank"
-      rel="noreferrer"
       :aria-label="$t('common.customerService')"
       :title="$t('common.customerService')"
       @click="openCustomerService"
@@ -29,15 +27,50 @@
         />
       </svg>
     </a>
+    <div v-if="customerServiceUrl" class="cs-page">
+      <iframe
+        ref="csFrame"
+        class="cs-frame"
+        :src="customerServiceUrl"
+        :title="$t('common.customerService')"
+        @load="focusCustomerService"
+      ></iframe>
+      <div class="back" @click="closeCustomerService">
+        <svg viewBox="0 0 24 24" width="18" height="18" fill="none" aria-hidden="true">
+          <path d="M15 6 9 12l6 6" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" />
+        </svg>
+      </div>
+      <!-- <button type="button" class="cs-back" @click="closeCustomerService">
+        <svg viewBox="0 0 24 24" width="18" height="18" fill="none" aria-hidden="true">
+          <path d="M15 6 9 12l6 6" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" />
+        </svg>
+        {{ $t('common.back') }}
+      </button> -->
+    </div>
   </div>
 </template>
 
 <script setup>
+import { onUnmounted, ref, watch } from 'vue'
 import AppHeader from '@/components/AppHeader.vue'
 import AppFooter from '@/components/AppFooter.vue'
 import { useCustomerService } from '@/utils/useCustomerService'
 
-const { openCustomerService } = useCustomerService()
+const { openCustomerService, closeCustomerService, customerServiceUrl } = useCustomerService()
+const csFrame = ref(null)
+
+function focusCustomerService() {
+  csFrame.value?.focus()
+}
+
+watch(customerServiceUrl, (url) => {
+  document.documentElement.classList.toggle('cs-lock', Boolean(url))
+  if (url) focusCustomerService()
+})
+
+onUnmounted(() => {
+  document.documentElement.classList.remove('cs-lock')
+})
 </script>
 
 <style scoped>
@@ -70,5 +103,68 @@ const { openCustomerService } = useCustomerService()
     width: 60px;
     height: 60px;
   }
+}
+
+.cs-page {
+  position: fixed;
+  inset: 0;
+  z-index: 200;
+  background: #fff;
+}
+
+.cs-frame {
+  position: fixed;
+  inset: 0;
+  z-index: 200;
+  display: block;
+  width: 100vw;
+  height: 100vh;
+  height: 100dvh;
+  border: 0;
+  background: #fff;
+}
+
+.back {
+  position: fixed;
+  top: 16px;
+  right: 16px;
+  z-index: 210;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 32px;
+  height: 32px;
+  border-radius: 16px;
+  color: #000;
+  background-color: #fff;
+  cursor: pointer;
+}
+
+.cs-back {
+  position: absolute;
+  top: 16px;
+  right: 16px;
+  z-index: 2;
+  display: inline-flex;
+  align-items: center;
+  gap: 4px;
+  height: 32px;
+  padding: 0 12px 0 8px;
+  border: 0;
+  border-radius: 16px;
+  background: var(--color-accent);
+  color: #111;
+  font: inherit;
+  font-size: 14px;
+  font-weight: 600;
+  cursor: pointer;
+  pointer-events: auto;
+}
+</style>
+
+<style>
+html.cs-lock,
+html.cs-lock body {
+  overflow: visible !important;
 }
 </style>

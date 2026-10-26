@@ -32,13 +32,19 @@ export function useCustomerService() {
     void loadSupportStaffUrl()
   })
 
+  const customerServiceUrl = ref('')
+
   async function openCustomerService(e) {
     e?.preventDefault?.()
     const raw = (await loadSupportStaffUrl()) || getCustomerServiceFallbackUrl()
     const href = buildCustomerServiceUrl(raw)
     if (!href) return
-    window.open(href, '_blank', 'noopener,noreferrer')
+    customerServiceUrl.value = href
   }
 
-  return { openCustomerService }
+  function closeCustomerService() {
+    customerServiceUrl.value = ''
+  }
+
+  return { openCustomerService, closeCustomerService, customerServiceUrl }
 }

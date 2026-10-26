@@ -9,6 +9,7 @@ export default {
   },
   common: {
     customerService: 'Customer service',
+    back: 'Back',
     tradeNow: 'Trade Now',
   },
   nav: {

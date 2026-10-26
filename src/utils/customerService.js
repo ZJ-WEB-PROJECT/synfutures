@@ -6,11 +6,16 @@ function getSettingApiUrl() {
   return `${window.location.origin}/api/common/getAllSetting`
 }
 
-/** 与交易所 SUPPORT_STAFF_SETTING[0].getUrl 一致：url + 美洽 metadata */
+function appendQuery(url, query) {
+  return url + (url.includes('?') ? '&' : '?') + query
+}
+
+/** 与交易所客服页一致：只补 metadata，不用 pf=pc，避免桌面布局把输入框裁掉 */
 export function buildCustomerServiceUrl(rawUrl, userId = '') {
   if (!rawUrl) return ''
+  if (/[?&]metadata=/.test(rawUrl)) return rawUrl
   const name = `UID_${userId || 'temporary_' + +new Date()}`
-  return `${rawUrl}&metadata={"name":"${name}"}`
+  return appendQuery(rawUrl, `metadata={"name":"${name}"}`)
 }
 
 /**
